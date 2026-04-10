@@ -172,10 +172,17 @@ query Order2 {
 }
 ```
 
+### Error
 
 The `Order2` query works fine but `Order1` returns this error:
 
 > The variable value `__fusion_exports__1` was not provided but is required. (Parameter 'requirementValues')
+
+**Note:**
+
+This error only happens when we have more that one implementation for an interface and also we use cross field querying that needs to be resolved by the second service (product service in this case)
+
+**Output:**
 
 ```json
 {
