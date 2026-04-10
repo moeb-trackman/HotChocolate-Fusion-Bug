@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "quick-start.Gateway": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "graphql",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:10079;http://localhost:10082"
+    }
+  }
+}
