@@ -1,4 +1,5 @@
-:: dotnet tool install -g HotChocolate.Fusion.CommandLine
+dotnet tool update -g HotChocolate.Fusion.CommandLine
+
 cd src\quick-start.Ordering
 dotnet run -- schema export --output schema.graphql
 fusion subgraph pack
