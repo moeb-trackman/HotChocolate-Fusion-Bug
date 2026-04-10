@@ -24,8 +24,8 @@ public static class Query
     }
 
     [Query]
-    [Lookup]
-    [Internal]
+    [HotChocolate.Fusion.SourceSchema.Types.Lookup]
+    [HotChocolate.Fusion.SourceSchema.Types.Internal]
     [NodeResolver]
     public static Task<Product> GetProductById(int id, ProductByIdDataLoader productById)
     {

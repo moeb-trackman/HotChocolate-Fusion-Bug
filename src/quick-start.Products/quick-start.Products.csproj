@@ -12,10 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="HotChocolate.AspNetCore" Version="15.1.13" />
-    <PackageReference Include="HotChocolate.AspNetCore.CommandLine" Version="15.1.13" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="16.0.0-rc.1.29" />
+    <PackageReference Include="HotChocolate.AspNetCore.CommandLine" Version="16.0.0-rc.1.29" />
     <PackageReference Include="HotChocolate.Fusion.SourceSchema" Version="15.1.13" />
-    <PackageReference Include="HotChocolate.Types.Analyzers" Version="15.1.13">
+    <PackageReference Include="HotChocolate.Types.Analyzers" Version="16.0.0-rc.1.29">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
