@@ -1,7 +1,6 @@
-using HotChocolate.Fusion.SourceSchema.Types;
-
 namespace quick_start.Products.Types;
 
+[Shareable]
 [QueryType]
 public static class Query
 {
@@ -23,11 +22,10 @@ public static class Query
         return _products;
     }
 
-    [Query]
     [Lookup]
     [Internal]
     [NodeResolver]
-    public static Task<Product> GetProductById(int id, ProductByIdDataLoader productById)
+    public static Task<Product?> GetProductById(int id, ProductByIdDataLoader productById)
     {
         //Use data loader to avoid n+1 problem
         return productById.LoadAsync(id);

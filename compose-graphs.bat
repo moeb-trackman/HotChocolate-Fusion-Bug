@@ -1,18 +1,16 @@
-dotnet tool update -g HotChocolate.Fusion.CommandLine
+dotnet tool update -g ChilliCream.Nitro.CommandLine --version "16.1.0-p.1.11"
 
 cd src\quick-start.Ordering
-dotnet run -- schema export --output schema.graphql
-fusion subgraph pack
+dotnet run -- schema export
 
 cd ..\..
 
 cd src\quick-start.Products
-dotnet run -- schema export --output schema.graphql
-fusion subgraph pack
+dotnet run -- schema export
 
 cd ..\..
 
 cd src\quick-start.Gateway
-fusion compose -p gateway.fgp -s ../quick-start.Products -s ../quick-start.Ordering --enable-nodes
+nitro fusion compose -a gateway.far -f ../quick-start.Products -f ../quick-start.Ordering --enable-global-object-identification
 
 cd ..\..

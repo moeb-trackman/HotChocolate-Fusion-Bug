@@ -1,6 +1,9 @@
+using HotChocolate.Resolvers;
+
 namespace quick_start.Ordering.Types;
 
 [QueryType]
+[Shareable]
 public static class Query
 {
     private static readonly IOrder[] _orders =
@@ -25,5 +28,9 @@ public static class Query
     [NodeResolver]
     public static Order2? GetOrder2ById(int id) => _orders.FirstOrDefault(x => x.Id == id) as Order2;
 
-    public static IOrder[] GetOrders() => _orders;
+    public static IOrder[] GetOrders(IResolverContext context)
+    {
+        context.ReportError("This is an error message from the resolver.");
+        return _orders;
+    }
 }

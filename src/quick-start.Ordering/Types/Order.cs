@@ -29,4 +29,4 @@ public class Order2 : IOrder
     public Product Product { get; set; }
 }
 
-public sealed record Product([property: ID] int Id);
+public sealed record Product([property: ID, Shareable] int Id);

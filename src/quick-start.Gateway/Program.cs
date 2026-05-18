@@ -1,12 +1,12 @@
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddHttpClient("Fusion");
+builder.Services.AddHttpClient("fusion");
 
-builder.Services
-    .AddFusionGatewayServer()
-    .ConfigureFromFile("gateway.fgp")
+builder
+    .AddGraphQLGateway()
+    .AddFileSystemConfiguration("./gateway.far")
     // do not enable query plan in production!
-    .ModifyFusionOptions(x => x.AllowQueryPlan = true);
+    .ModifyRequestOptions(x => x.CollectOperationPlanTelemetry = true);
 
 var app = builder.Build();
 

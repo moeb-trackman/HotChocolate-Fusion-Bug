@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-builder.AddGraphQL().AddTypes().AddGlobalObjectIdentification();
+builder.AddGraphQL("Ordering").AddTypes().AddGlobalObjectIdentification(p => p.MarkNodeFieldAsLookup = true);
 
 var app = builder.Build();
 
