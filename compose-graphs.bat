@@ -1,4 +1,4 @@
-dotnet tool update -g ChilliCream.Nitro.CommandLine --version "16.1.0-p.1.11"
+dotnet tool update -g ChilliCream.Nitro.CommandLine --version "16.0.3" --allow-downgrade
 
 cd src\quick-start.Ordering
 dotnet run -- schema export
