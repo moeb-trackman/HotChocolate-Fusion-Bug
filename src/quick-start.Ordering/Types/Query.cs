@@ -33,4 +33,9 @@ public static class Query
         context.ReportError("This is an error message from the resolver.");
         return _orders;
     }
+
+    public static IOrder[] GetOrdersByIds(int[] ids)
+    {
+        return _orders.Where(o => ids.Contains(o.Id)).ToArray();
+    }
 }

@@ -10,6 +10,7 @@ type Query @shareable {
   order1ById(id: ID!): Order1 @cost(weight: "10")
   order2ById(id: ID!): Order2 @cost(weight: "10")
   orders: [IOrder!]! @cost(weight: "10")
+  ordersByIds(ids: [Int!]!): [IOrder!]! @cost(weight: "10")
 }
 
 type Order1 implements Node & IOrder {
