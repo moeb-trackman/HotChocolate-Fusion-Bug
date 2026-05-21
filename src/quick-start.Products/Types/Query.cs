@@ -9,11 +9,21 @@ public static class Query
             {
                 Id = 1,
                 Name = "Product 1",
+                Comments =
+                [
+                    new Comment { Content = "Great product!" },
+                    new Comment { Content = "I love it!" }
+                ]
             },
             new Product
             {
                 Id = 2,
                 Name = "Product 2",
+                Comments =
+                [
+                    new Comment { Content = "Great product!" },
+                    new Comment { Content = "I love it!" }
+                ]
             }
         ];
 

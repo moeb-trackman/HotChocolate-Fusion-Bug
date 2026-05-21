@@ -23,14 +23,20 @@ public static class Query
         ];
 
     [NodeResolver]
-    public static Order1? GetOrder1ById(int id) => _orders.FirstOrDefault(x => x.Id == id) as Order1;
+    public static Order1? GetOrder1ById(int id)
+    {
+        return _orders.FirstOrDefault(x => x.Id == id) as Order1;
+    }
 
     [NodeResolver]
-    public static Order2? GetOrder2ById(int id) => _orders.FirstOrDefault(x => x.Id == id) as Order2;
+    public static Order2? GetOrder2ById(int id, IResolverContext context)
+    {
+        context.ReportError("This is an error message from the resolver.");
+        return _orders.FirstOrDefault(x => x.Id == id) as Order2;
+    }
 
     public static IOrder[] GetOrders(IResolverContext context)
     {
-        context.ReportError("This is an error message from the resolver.");
         return _orders;
     }
 

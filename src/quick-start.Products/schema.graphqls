@@ -11,9 +11,14 @@ type Query @shareable {
   productById(id: ID!): Product @lookup @internal @cost(weight: "10")
 }
 
+type Comment {
+  content: String!
+}
+
 type Product implements Node {
   id: ID! @shareable
   name: String!
+  comments: [Comment!]!
 }
 
 "The node interface is implemented by entities that have a global unique identifier."
