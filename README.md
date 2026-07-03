@@ -237,4 +237,4 @@ fragment MultiOrderBaseFragment on OrderB {
 }
 ```
 
-### HotChocolate Version: 16.0.8
+### HotChocolate Version: 16.3.0
