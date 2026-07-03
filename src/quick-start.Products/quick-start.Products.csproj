@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Types\Product.cs" />
+    <Compile Remove="Types\Query.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="HotChocolate.AspNetCore" Version="16.0.8" />
     <PackageReference Include="HotChocolate.AspNetCore.CommandLine" Version="16.0.8" />
     <PackageReference Include="HotChocolate.Types.Analyzers" Version="16.0.8">

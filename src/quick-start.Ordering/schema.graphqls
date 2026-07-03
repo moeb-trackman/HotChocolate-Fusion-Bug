@@ -7,37 +7,39 @@ type Query @shareable {
   node("ID of the object." id: ID!): Node @lookup @shareable @cost(weight: "10")
   "Lookup nodes by a list of IDs."
   nodes("The list of node IDs." ids: [ID!]!): [Node]! @cost(weight: "10")
-  order1ById(id: ID!): Order1 @cost(weight: "10")
-  order2ById(id: ID!): Order2 @cost(weight: "10")
-  orders: [IOrder!]! @cost(weight: "10")
-  ordersByIds(ids: [Int!]!): [IOrder!]! @cost(weight: "10")
+  orders: [OrderBase!] @cost(weight: "10")
 }
 
-type Order1 implements Node & IOrder {
-  id: ID!
+type OrderA implements MultiOrderBase & OrderBase {
   name: String!
-  product: Product!
+  items: [OrderItem!]
 }
 
-type Order2 implements Node & IOrder {
-  id: ID!
+type OrderB implements MultiOrderBase & OrderBase {
   name: String!
-  product: Product!
+  items: [OrderItem!]
 }
 
-type Product {
-  id: ID! @shareable
+type OrderItem {
+  product: Product @cost(weight: "10")
 }
 
-interface IOrder {
+type Product implements Node {
   id: ID!
-  name: String!
-  product: Product!
+}
+
+interface MultiOrderBase implements OrderBase {
+  items: [OrderItem!]
+  name: String
 }
 
 "The node interface is implemented by entities that have a global unique identifier."
 interface Node {
   id: ID!
+}
+
+interface OrderBase {
+  name: String
 }
 
 "The purpose of the `cost` directive is to define a `weight` for GraphQL types, fields, and arguments. Static analysis can use these weights when calculating the overall cost of a query or response."

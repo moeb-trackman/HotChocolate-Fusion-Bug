@@ -7,18 +7,12 @@ type Query @shareable {
   node("ID of the object." id: ID!): Node @lookup @shareable @cost(weight: "10")
   "Lookup nodes by a list of IDs."
   nodes("The list of node IDs." ids: [ID!]!): [Node]! @cost(weight: "10")
-  products: [Product!]! @cost(weight: "10")
-  productById(id: ID!): Product @lookup @internal @cost(weight: "10")
-}
-
-type Comment {
-  content: String!
 }
 
 type Product implements Node {
-  id: ID! @shareable
+  id: ID!
   name: String!
-  comments: [Comment!]!
+  description: String!
 }
 
 "The node interface is implemented by entities that have a global unique identifier."
@@ -37,8 +31,6 @@ directive @cost(
   | ARGUMENT_DEFINITION
   | ENUM
   | INPUT_FIELD_DEFINITION
-
-directive @internal on OBJECT | FIELD_DEFINITION
 
 """
 The @lookup directive is used within a source schema to specify output fields

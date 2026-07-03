@@ -5,7 +5,7 @@ public interface IOrder
     [ID]
     int Id { get; set; }
     string Name { get; set; }
-    Product Product { get; set; }
+    Product? Product { get; set; }
 }
 
 [Node]
@@ -15,7 +15,7 @@ public class Order1 : IOrder
     public int Id { get; set; }
 
     public string Name { get; set; }
-    public Product Product { get; set; }
+    public Product? Product { get; set; }
 
 }
 
@@ -26,7 +26,7 @@ public class Order2 : IOrder
     public int Id { get; set; }
 
     public string Name { get; set; }
-    public Product Product { get; set; }
+    public Product? Product { get; set; }
 }
 
 public sealed record Product([property: ID, Shareable] int Id);

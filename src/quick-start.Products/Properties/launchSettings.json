@@ -3,6 +3,7 @@
     "quick-start.Products": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "graphql",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

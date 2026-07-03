@@ -12,13 +12,13 @@ public static class Query
             {
                 Id = 1,
                 Name = "Order1",
-                Product = new Product(1)
+                Product = null, //new Product(1)
             },
             new Order2
             {
                 Id = 2,
                 Name = "Order2",
-                Product = new Product(2)
+                Product = null, //new Product(2)
             }
         ];
 
