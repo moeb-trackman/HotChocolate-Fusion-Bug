@@ -47,7 +47,7 @@ We have two graphql serivces (ordering and products), this is the schematic diag
 
 ### Running the Query
 
-Run the gateway and navigate to <https://localhost:10079/graphql/>, then run the query and it will resolve all products as `null`
+Run the aspire host and navigate to gateway <https://localhost:10079/graphql/>, then run the query and it will resolve all products as `null`
 
 ```graphql
 query {

@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HotChocolate.Fusion.AspNetCore" Version="16.0.8" />
-	  <PackageReference Include="HotChocolate.Execution.Configuration.Abstractions" Version="16.0.8" />
-	  <PackageReference Include="HotChocolate.Types" Version="16.0.8" />
+    <PackageReference Include="HotChocolate.Fusion.AspNetCore" Version="16.3.0" />
+	  <PackageReference Include="HotChocolate.Execution.Configuration.Abstractions" Version="16.3.0" />
+	  <PackageReference Include="HotChocolate.Types" Version="16.3.0" />
   </ItemGroup>
 
 </Project>
